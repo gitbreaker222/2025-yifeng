@@ -1,4 +1,7 @@
 ---
+const { frontmatter } = Astro.props;
+const DEFAULT_TITLE = "Yifeng Wang";
+const TITLE = frontmatter.title || DEFAULT_TITLE;
 const UPDATE_TIME = 1747753567;
 ---
 
@@ -10,7 +13,12 @@ const UPDATE_TIME = 1747753567;
       name="generator"
       content={Astro.generator}
     />
-    <title>Yifeng Wang</title>
+    <title>{TITLE}</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
     <meta
       name="description"
       content="Yifeng Wang | Yoga, Tanz und Klangschalen-Therapie in Freiburg"
@@ -70,6 +78,15 @@ const UPDATE_TIME = 1747753567;
   </head>
 
   <body>
-    <slot />
+    <div
+      id="page"
+      class="page"
+    >
+      <div class="container">
+        <div class="content">
+          <slot />
+        </div>
+      </div>
+    </div>
   </body>
 </html>
