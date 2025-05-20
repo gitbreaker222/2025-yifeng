@@ -1,0 +1,92 @@
+---
+const { frontmatter } = Astro.props;
+const DEFAULT_TITLE = "Yifeng Wang";
+const TITLE = frontmatter.title || DEFAULT_TITLE;
+const UPDATE_TIME = 1747753567;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <title>{TITLE}</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="description"
+      content="Yifeng Wang | Yoga, Tanz und Klangschalen-Therapie in Freiburg"
+    />
+    <meta
+      name="keywords"
+      content="yifeng, yoga, klangschale, tanz, tanzen, improvisation, performance, somatik"
+    />
+    <meta
+      name="generator"
+      content="hosting-page-builder"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <meta
+      name="og:url"
+      content="https://www.yifeng.de/index.html"
+    />
+    <meta
+      name="og:locale"
+      content="de"
+    />
+    <meta
+      name="og:type"
+      content="website"
+    />
+    <meta
+      name="og:title"
+      content="Yifeng Wang"
+    />
+    <meta
+      name="og:description"
+      content="Yifeng Wang | Yoga, Tanz und Klangschalen-Therapie in Freiburg"
+    />
+    <meta
+      name="og:updated_time"
+      content={UPDATE_TIME.toString()}
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="./fontawesome/css/fontawesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./fontawesome/css/solid.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./style.css"
+    />
+  </head>
+
+  <body>
+    <div
+      id="page"
+      class="page"
+    >
+      <div class="container">
+        <div class="content">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
