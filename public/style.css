@@ -13,10 +13,8 @@ body {
   height: 100%;
   line-height: normal;
   text-align: center;
-  text-shadow: 1px 1px #353125;
   font-family: "Open Sans", sans-serif;
   font-size: 1.1em;
-  color: #fff;
   background-color: #f0f0f0;
   background-size: cover;
   background-position: 50% 50%;
@@ -131,7 +129,13 @@ ol {
 
 @media screen {
   .page {
+    text-shadow: 1px 1px #353125;
+    color: #fff;
     background-image: url("https://images.pexels.com/photos/371075/pexels-photo-371075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-image:
+      linear-gradient(0.4turn, #465777, transparent 25%, transparent),
+      linear-gradient(0.46turn, transparent, transparent 55%, #6d589b);
+    background-color: #9ac2ec;
   }
 }
 
