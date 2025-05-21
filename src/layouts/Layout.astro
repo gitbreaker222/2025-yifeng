@@ -78,15 +78,21 @@ const UPDATE_TIME = 1747753567;
   </head>
 
   <body>
-    <div
-      id="page"
-      class="page"
-    >
-      <div class="container">
-        <div class="content">
-          <slot />
-        </div>
+    <div class="page">
+      <div class="content">
+        <slot />
       </div>
+
+      <footer>
+        <slot name="footer" />
+        {
+          Astro.url.pathname === "/impressum" ? (
+            <a href="/">zurück</a>
+          ) : (
+            <a href="/impressum">Impressum</a>
+          )
+        }
+      </footer>
     </div>
   </body>
 </html>

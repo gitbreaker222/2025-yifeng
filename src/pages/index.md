@@ -6,5 +6,5 @@ layout: ../layouts/Layout.astro
 
 Yoga, Tanz / Improvisation, Klangschalen-Therapie  
 
-<i class="fa-solid fa-envelope"></i>
-<a href="mailto:mail@yifeng.de">mail@yifeng.de</a>
+<i class="fa-solid fa-envelope"></i> 
+[mail@yifeng.de](mailto:mail@yifeng.de)
