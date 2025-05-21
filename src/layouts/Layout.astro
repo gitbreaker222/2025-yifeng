@@ -1,8 +1,17 @@
 ---
+import childProcess from "child_process";
+import { version } from "../../package.json";
+
 const { frontmatter } = Astro.props;
 const DEFAULT_TITLE = "Yifeng Wang";
 const TITLE = frontmatter.title || DEFAULT_TITLE;
 const UPDATE_TIME = 1747753567;
+
+// obtain Git commit hash
+const hash = childProcess
+  .execSync("git rev-parse --short HEAD")
+  .toString()
+  .trim();
 ---
 
 <!doctype html>
@@ -13,6 +22,15 @@ const UPDATE_TIME = 1747753567;
       name="generator"
       content={Astro.generator}
     />
+    <meta
+      name="version"
+      content={version}
+    />
+    <meta
+      name="commit-hash"
+      content={hash}
+    />
+
     <title>{TITLE}</title>
     <link
       rel="icon"
@@ -26,10 +44,6 @@ const UPDATE_TIME = 1747753567;
     <meta
       name="keywords"
       content="yifeng, yoga, klangschale, tanz, tanzen, improvisation, performance, somatik"
-    />
-    <meta
-      name="generator"
-      content="hosting-page-builder"
     />
     <meta
       name="viewport"
@@ -95,4 +109,5 @@ const UPDATE_TIME = 1747753567;
       </footer>
     </div>
   </body>
+  <!-- {version} / {hash} -->
 </html>
