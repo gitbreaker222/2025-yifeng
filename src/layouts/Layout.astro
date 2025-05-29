@@ -2,7 +2,7 @@
 import childProcess from "child_process";
 import { version } from "../../package.json";
 
-const { frontmatter } = Astro.props;
+const { frontmatter = {} } = Astro.props;
 const DEFAULT_TITLE = "Yifeng Wang";
 const TITLE = frontmatter.title || DEFAULT_TITLE;
 const UPDATE_TIME = 1747753567;
